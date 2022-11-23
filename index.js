@@ -18,8 +18,9 @@ const nombreCompleto = {
     nombre,
     apellido
 }
+const now = new Date();
 
 const nombreCompletoSession = sessionStorage.setItem('persona', JSON.stringify(nombreCompleto));
 const nombreCompletoLocal = localStorage.setItem('persona', JSON.stringify(nombreCompleto));
-document.cookie = 'nombreCookie=RamiroCookie';
-document.cookie = 'nombreCaducidad=Caducidad;expires=' + new Date(2022,10,23).getTimezoneOffset;
+document.cookie = 'Datos=Cookie';
+document.cookie = `Datos=${JSON.stringify(nombreCompleto)};expires=${new Date(now.getTime() + 2 * 60000)}`;
